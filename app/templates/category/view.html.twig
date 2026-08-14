@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Szczegóły kategorii #{{ category.id }}{% endblock %}
+
+{% block body %}
+    <h1>Szczegóły kategorii</h1>
+
+    <dl class="row">
+        <dt class="col-sm-3">ID</dt>
+        <dd class="col-sm-9">{{ category.id }}</dd>
+
+        <dt class="col-sm-3">Tytuł</dt>
+        <dd class="col-sm-9">{{ category.title }}</dd>
+
+        <dt class="col-sm-3">Data utworzenia</dt>
+        <dd class="col-sm-9">{{ category.createdAt|date('Y-m-d H:i:s') }}</dd>
+
+        <dt class="col-sm-3">Data aktualizacji</dt>
+        <dd class="col-sm-9">{{ category.updatedAt|date('Y-m-d H:i:s') }}</dd>
+    </dl>
+
+    <p>
+        <a href="{{ path('category_index') }}" class="btn btn-outline-secondary">
+            Powrót do listy
+        </a>
+    </p>
+{% endblock %}
